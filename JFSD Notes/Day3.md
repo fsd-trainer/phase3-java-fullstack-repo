@@ -1,5 +1,17 @@
+Last Session - Spring Core Module = Spring framework contains Spring Container
+
+<bean>
+    <!-- to initialize object properties -->
+
+    <constructor-args  />    // to invoke constructor to initialize property
+
+   <property   />   // to invoke setter method for that property
+
+</bean>
+
+
 To create objects by spring container from multiple xml config files
-===================================================
+====================================================================
 1. Write the Java class
    a. Audio - length
    b. Video - format (mp4. wvm)
