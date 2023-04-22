@@ -5,25 +5,22 @@
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- bean definitions here -->
 
-		<!-- bean definitions here -->
-	<!--  <bean name="" class="">
-		
-	</bean> -->
-	<!--  container instantiates the object and initializes the property with values -->
-	<bean name="messageBean" class="com.abc.training.spring.MessageService">
-	
-	<!--  setter method of a property -->   
-	   <property name="senderName" value="John Mathew"></property>
-		   
-		   <!--  invoke parameterized constructor -->
-	   <constructor-arg name="textMsg" value="Hi, Good Evening!"/>
-	
-	</bean>
-	
-	<bean name="audioBean" class="com.abc.training.spring.Audio">
-	
-	</bean>
+	<!-- bean definitions here -->
+	<!-- <bean name="" class=""> </bean> -->
+	<!-- container instantiates the object and initializes the property with 
+		values -->
+	<!-- 2 properties : textMsg & senderNAme -->
+	<bean name="messageBean"
+		class="com.abc.training.spring.MessageService">
 
+		<!-- setter method of a property -->
+		<property name="senderName" value="John Mathew"></property>
+
+		<!-- invoke parameterized constructor -->
+		<constructor-arg name="textMsg"
+			value="Hi, Good Evening!" />
+
+	</bean>
 
 </beans>
         

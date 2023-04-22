@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- bean definitions here -->
+
+	<!-- audio -->
+	<!-- name of bean should be unique in the container -->
+	<bean name="audiobean" class="com.abc.training.spring.Audio">
+		<constructor-arg name="length" value="30" />
+	</bean>
+
+
+	<!-- video -->
+	<bean name="videobean" class="com.abc.training.spring.Video">
+       <property name="format"  value="mp4"/>
+	</bean>
+</beans>
+        
+        
+        
+        
+ 

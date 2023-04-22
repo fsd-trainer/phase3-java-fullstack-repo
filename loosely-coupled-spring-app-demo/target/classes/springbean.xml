@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- bean definitions here -->
+
+	<!--  register Person bean -->
+	<bean name="personBean"  class="com.training.example.spring.Person">
+	 <constructor-arg name="personId"  value="10"/>
+	 <constructor-arg name="personName" value="John Mathew"/>
+	 <constructor-arg name="address"   ref="addressBean"/> <!--  inject addressBean object in this property -->
+  
+	</bean>
+	
+	
+	
+	<!--  register Address bean -->
+	
+	<bean name="addressBean"  class="com.training.example.spring.Address">
+	   <constructor-arg name="city" value="Mumbai"/>
+	   <constructor-arg  name="postalCode" value="453267" />
+	</bean>
+</beans>
+        
+        
+        
+        
+ 
