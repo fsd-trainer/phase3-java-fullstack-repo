@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+
+	<!-- register beans using annotations -->
+
+	<!-- Enable support of annotation in the application -->
+	<context:annotation-config />
+
+	<!-- Give the path of the package to be scanned for annotation -->
+	<!-- Every class of the package will be scanned for annotations by spring 
+		container -->
+	<context:component-scan
+		base-package="com.training.example.spring"></context:component-scan>
+
+	<context:property-placeholder
+		location="classpath:application.properties" />
+
+<!--  Configuring dataSource bean -->
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/studentmgmt?useSSL=false" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+<!--  registering JDBCTemplate Bean in the spring container -->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+</beans>
+
+
+        
+        
+        
+        
+ 
+ 
+ 
+        
+ 

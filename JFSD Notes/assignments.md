@@ -36,4 +36,26 @@ class Flute{
 ==============================================================================
 
 3. Create a person class with busines method checkAge() and manage it in spring application. Get object of Person class through getBean() method and invoke business method on it.
+
+==========================================================
+
+
+4.
+
+=========================================================
+
+5. 
+
+
+
+Connect on Community  forum  to discuss questions and evaluation
+
+
+
+
+
+
+
+
+
         
