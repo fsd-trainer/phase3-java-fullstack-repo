@@ -171,8 +171,7 @@ we did two examples:  autowiring with property and autowiring with constructor m
 
 LAb  - doing CRUD operation using JDBCTemplate API in spring
 
-boilerplate code
-=============================================================
+JDBC COde to conenct to DB ===========================================================
 connect to database - JDBC API
 try{
 Connection conn = DriverManager.getConnection("...");
