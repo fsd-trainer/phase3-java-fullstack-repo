@@ -1,0 +1,121 @@
+How to produce and consume REST API
+=========================================
+
+on server web application - Define URL + HTTP Methods (Actions - verbs : GET / POST/ PUT/ DELETE)
+                                         Data needs to be fetched from Database
+
+
+                                     URL + HTTP Method
+       Postman  Client <----------------------->   RestController <------------------> SErvice <--------------------> DAO Layer -------------> DB
+                                                                      JSON                 <-----------    Java Class                             JPA 
+
+ Architecture of application
+
+       Postman Client <---------------------------> REstController <-----------------> DAO Layer  <------------> DB (In-Memory DB - H2, HSQLDB / External DB - MYSQL, POstgreSQL, Oracle)
+
+                                                                    Spring REST                          JPA
+
+
+Spring Boot  uses JPA
+
+JPA (Java Persistence API) - ORM specification GIVEN BY Java  EE.
+JPA doesnot have Engine. so it uses other engines like Hibernate Engine, EclipseLink.
+
+   JAva Object ----------------------> ORM (JPA  - annotation+ configuration + Hibernate Engine- SQL queries) -----------------> DB
+    Product 
+
+
+Spring Data JPA is  a project that works with SPring Boot application.
+Spring Data JPA works on Autoconfiguration for DAO Layer / Repository Layer.
+
+
+
+Flow
+    1. Develop and test DAO LAyer <---> DB
+    2. Create the Rest Layer
+                 a. define methods
+                 b. on method provide URL
+                 c. Ask for the object of DAO layer
+                 d. complete implementation of each method.
+
+
+
+1. DAO Layer
+    a. In case of MySQL, create databaase and table with in.
+    b. Configuration (application.properties)
+                  i Driver
+                  2. URL of DB
+                  3. Username
+                  4. password
+                  5. dialect property is given by hibernate
+                          Java uses String  -> Hibernate consult MYSQL / H2 Dialect class -------> Varchar
+                                         int      ->  Hibernate consult MYSQL / H2 Dialect class -------> int / bigint
+                  5. Hibernate configurations
+
+ c. Create Entity class mapped to a table in DB
+                 i Annotate the class with @Entity annotationand @Table annotation if table name is different from entity class 
+                 ii. Annotate the properties of the class to map to the coulmns of the table
+                iii. Add constructor and getter/ setter methods to the class, always add default / no-args constructor in the class
+
+d. Create the Repository interface that will be implemented  by a class which will write methods implementation containing JPA logic
+
+   Interface  :   UserRepository
+   Class        : UserRepositoryImpl(do not create class in spring data JPA)
+   Extend Interface : CrudRepository interface
+                                 saveAll()
+                                 findById()
+                                 findAll()
+                                 existsById()
+                                 deleteById()'
+                                 delete()
+   Implementation Class : will be auto generated with method implementation by Spring DATA JPA                             
+
+DELETE users
+where email='john@hotmail.com";
+
+With Spring Data JPA, two ways of generating Implementation class
+
+   1. Extend CustomInterface from CrudRepository and Spring data jpa will generate implementation class and register it in the container.
+   2. Donot extend from CrudRepository and write yourself implementation class with method codes and annotate class with @Repository.
+
+
+
+e. Test the DAO LAyer working.
+
+
+
+ DB named as persondb
+ Create a table named users
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
