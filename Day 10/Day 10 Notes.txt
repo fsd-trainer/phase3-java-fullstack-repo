@@ -1,0 +1,97 @@
+Unit test is testing smallest unit of code to test its behavior as expected
+
+application ----------> SYSTEM UNIT Test (SUT)
+ class ----> tested (CUT)
+{
+       method1(){...} - smallest unit (unit test) - multiple test cases (pass & fail)
+         add(num1, num2) { return num1 + num2) - when I pass two values 2, 2 , expected outut should be 4
+                                                                       when I pass two valuw 2 -4, expected 2.. fail
+       method2() {..} -  // tested
+
+}
+  class  -------------> tested (CUT)
+  {
+   method3() {..}  // tested
+
+
+}
+
+Why unit testing - ensure quality code 
+
+unit testing is done by developers
+
+unit test - compare expected , actual -> pass or fail
+
+
+Build a car 
+        - functionality : unlocked door
+
+test cases
+             if owner key is used, door unlocked - yes - passed
+            if house key is unlock the door,  test fail
+            if garage key is unlock the door, expected should open the door
+           if same model car used by neighbour, neighbour car key to unlock door, expected should not open the door
+
+Every unit test case need to be provided with all inputs it needs.
+Every unit test case needs to be executed in isolation (object, variables, dummy object..)
+
+ calculator{
+      add(num1, num2){..}-> 10 test case (every test case runs in isolation)
+}
+
+test case1 -> new Caluclator();
+test case2 -> new Caluclator();
+
+
+Unit testing in done by Java framework called as JUNIT
+
+JUNIT 4  -> popular : 2006
+JUNIT 5  : 2017
+
+JUNIT Platform (API + annotations + Engine)
+
+Buddy : Mockito Library
+
+Combination of JUNIT with Mockito Library
+
+Body Double : not real object
+
+Mockito : dependent Object 
+
+
+Person{
+
+  Address address 
+ public Person(Address address) // dependent object
+{
+   this.address = address
+}
+
+  changeAddress(){   // to be tested test
+   return this.address.getCity();
+}
+}
+
+
+Mockito : create a simulated object which looks like real object
+                stimulated object will be given with the implemtation for the methods.
+                In the test code
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

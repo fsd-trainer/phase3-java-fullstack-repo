@@ -85,7 +85,60 @@ e. Test the DAO LAyer working.
 
 
 
- 
+ DB named as persondb
+ Create a table named users
+
+
+
+
+UserController  URLS:
+    URL (nouns)                               -------> Http method (verb)
+   https://localhost:8080/api/v2/users -------> GET   // Return all user objects as List  to the client
+   https://localhost:8080/api/v2/users/{id}  ----> GET // Return the user object of the passed Id
+   Path variable - {id}
+   
+   https://localhost:8080/api/v2/users ----> POST // server application will add object sent by client in the database
+  
+  https://localhost:8080/api/v2/users/{id} ---> DELETE // server will delete record from the db given by id
+
+https://localhost:8080/api/v2/users/name/{name} --> GET // retrieve user details based on given name 
+
+
+
+http STATUS CODE - indicates if the HTtp request was successful served from server or returned some error.
+
+100 - 199
+200-299 (200 -OK, 201 - NEW RESOURCE ON SERVER)
+300 - 399 
+400-499(404 - CLIENT SIDE ERROR, 403 - Forbidden response)
+500-599  - (500 - Server Error)
+
+
+@ControllerAdvice - Global exceptions
+
+For generating documentation - Swagger2 API dependency or Openapi depencency in pom.xml
+// documentation will be created at - http://localhost:8080/swagger-ui/index.html
+
+
+
+Consume Rest APIs 
+
+  - Angular / React UI app
+ - Postman ready UI app from google
+ - Programatically - RestTemplate  (only in Spring application)
+                     RestTemplate restTemplate = new RestTemplate()
+                      ResponseEntiy  rs = restTemplate.getObjectforUri("https://localhost:8443/api/v2/users", new object {}, return type)
+                           
+Spring Web Application <----------------------------------------------> Spring Web Application
+  Conusmer [RestTemplate]                                                     Produce REST API urls
+
+
+Documentation / Https / RestTemplate class
+
+==================================================
+
+UNIT Testing
+  - 
 
 
 
